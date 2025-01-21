@@ -1,0 +1,11 @@
+<p class="small-title">Write a love poem for your true love.</p>
+<%= turbo_frame_tag "new_post_form", target: :_top do %>
+  <%= form_with model: @post, local: false do |f| %>
+    <div>
+      <%= f.text_area :content %>
+    </div>
+    <div>
+      <%= f.submit "Post" %>
+    </div>
+  <% end %>
+<% end %>

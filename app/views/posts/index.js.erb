@@ -1,0 +1,7 @@
+document.getElementById("posts").insertAdjacentHTML("beforeend", "<%= j render(@posts) %>");
+<% if @posts.next_page %>
+  document.getElementById("posts").setAttribute("data-next-page", "<%= @posts.next_page %>");
+<% else %>
+  document.getElementById("posts").removeAttribute("data-next-page");
+  document.getElementById("loading").style.display = "none";
+<% end %>

@@ -1,0 +1,8 @@
+<%= form_with model: post, local: true do |f| %>
+  <div>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit "Save Changes" %>
+  </div>
+<% end %>

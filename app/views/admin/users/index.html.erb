@@ -1,0 +1,19 @@
+<h1>Manage Users</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
+        <td><%= link_to "Edit Role", edit_admin_user_path(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

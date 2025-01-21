@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dearyou</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <div class="body-container">
+    <header>
+      <div class="header-left"></div>
+      <div class="header-center">
+        <%= link_to root_path do %>
+          <%= image_tag "logo1.png", alt: "Logo", class: "logo" %>
+        <% end %>
+      </div>
+      <div class="header-right">
+        <%= button_to destroy_user_session_path, method: :delete, data: { turbo: false }, class: "icon-button"  do %>
+          <div class="icon-wrapper">
+            <%= show_svg("feather/log-out.svg") %>
+          </div>
+        <% end %>
+      </div>
+      
+
+
+    </header>
+          <!-- Navigation Links -->
+      <nav id="nav-links"> 
+      <div class="navbar">
+        <% if user_signed_in? %>
+          <%= link_to root_path do %>
+            <div class="icon-wrapper">
+              <%= show_svg("feather/home.svg") %>
+            </div>
+          <% end %>
+          <%= link_to new_post_path, class: "nav-link" do %>
+            <div class="icon-wrapper">
+              <%= show_svg("feather/feather.svg") %>
+            </div>
+          <% end %>
+          <%= link_to user_profile_path(username: current_user.username), class: "nav-link" do %>
+            <div class="icon-wrapper">
+              <%= show_svg("feather/user.svg") %>
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to "Sign Up", new_user_registration_path %>
+          <%= link_to "Login", new_user_session_path %>
+        <% end %>
+      </div>
+      </nav>
+
+    <main>
+      <div class="content-box">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; <%= Time.current.year %> Dearyou. All rights reserved.</p>
+    </footer>
+</div>
+    <!-- Mobile Navigation Toggle -->
+    <script>
+      document.getElementById('mobile-menu-button')?.addEventListener('click', function () {
+        const navLinks = document.getElementById('nav-links');
+        if (navLinks) {
+          navLinks.style.display = navLinks.style.display === 'none' ? 'flex' : 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

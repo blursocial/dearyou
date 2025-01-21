@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>dearyou, @<%= @user.username %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <div class="body-container">
+    <header>
+        <div class="profile-header">
+            <h1>@<%= @user.username %></h1>
+            <%= link_to root_path do %>
+                <div class="icon-wrapper">
+                 <%= show_svg("feather/home.svg") %>
+                </div>
+            <% end %>
+      </div>
+    </header>
+    <div class="profile-info">
+    <%= image_tag "avatar.png", class: "profile-avatar" %>
+        <p><%= @user.name.presence || @user.username %></p>
+        <p><%= @user.bio.presence || "This user hasn't added a bio yet." %></p>
+        <p><%= @user.posts.count %> posts</p>
+        <% if user_signed_in? %>
+            <% if current_user.following?(@user) %>
+                <span>Following</span>
+            <% else %>
+                <%= button_to "Follow", follows_path(followed_id: @user.id), method: :post, class: "btn" %>
+            <% end %>
+            <% else %>
+            <%= link_to "Follow", new_user_session_path, class: "btn" %>
+        <% end %>
+
+    </div>
+    <main>
+    <div class="content-box">
+        <%= yield %>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; <%= Time.current.year %> Your App Name</p>
+    </footer>
+    </div>
+  </body>
+</html>

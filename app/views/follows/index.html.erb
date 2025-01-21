@@ -1,0 +1,18 @@
+<h2>Followers</h2>
+<ul>
+  <% @followers.each do |follower| %>
+    <li>
+      <%= link_to follower.name, user_profile_path(username: follower.username) %>
+      <% unless current_user.following?(follower) %>
+        <%= button_to "Follow Back", follows_path(followed_id: follower.id), method: :post, class: "btn" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Following</h2>
+<ul>
+  <% @followeds.each do |followed| %>
+    <li><%= link_to followed.name, user_profile_path(username: followed.username) %></li>
+  <% end %>
+</ul>
