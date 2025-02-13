@@ -15,7 +15,7 @@
       <div class="header-left"></div>
       <div class="header-center">
         <%= link_to root_path do %>
-          <%= image_tag "logo1.png", alt: "Logo", class: "logo" %>
+         <div class="logo"> </div>
         <% end %>
       </div>
       <div class="header-right">
@@ -48,6 +48,8 @@
               <%= show_svg("feather/user.svg") %>
             </div>
           <% end %>
+          <button id="theme-toggle">Toggle Theme</button>
+
         <% else %>
           <%= link_to "Sign Up", new_user_registration_path %>
           <%= link_to "Login", new_user_session_path %>
@@ -56,6 +58,7 @@
       </nav>
 
     <main>
+    
       <div class="content-box">
         <%= yield %>
       </div>
