@@ -1,20 +1,35 @@
 :root {
-  --grey-s-70: #090e14;
-  --grey-s-50: #0f1822;
-  --grey-s-30: #152230;
-  --grey-s-20: #182636;
-  --grey-s-10: #1b2b3d;
-  --grey-100: #1e3044;
-  --grey-t-15: #404f60;
-  --grey-t-25: #566473;
-  --grey-t-35: #6d7885;
-  --grey-t-50: #8e97a1;
-  --grey-t-65: #b0b7be;
-  --grey-t-75: #c7cbd0;
-  --grey-t-85: #dde0e3;
-  --grey-t-92: #edeef0;
-  --grey-t-96: #f6f7f8;
-  --grey-t-98: #fafbfb;
+  --black-50: #f6f6f6;
+  --black-100: #e7e7e7;
+  --black-200: #d1d1d1;
+  --black-300: #b0b0b0;
+  --black-400: #888888;
+  --black-500: #6d6d6d;
+  --black-600: #5d5d5d;
+  --black-700: #4f4f4f;
+  --black-800: #454545;
+  --black-900: #3d3d3d;
+  --black-925: #181818;
+  --black-950: #000000;
+
+  /* Theme Variables (Default: Light Mode) */
+  --border-color: var(--black-200);
+  --background-color: #fff;
+  --text-color: var(--black-900);
+  --card-bg: #fff;
+  --card-border: var(--black-300);
+  --gradient: var(--light-gradient);
+  --primary-button: var(--black-900);
+  --background-image: url(denim.png);
+  --icon-color: var(--black-300);
+  --lighter-text-color: var(--black-400);
+  --logo-image: url(logo1.png);
+
+  /* Shadows */
+  --popover: 0px 2px 6px 0px rgba(21, 34, 48, 1);
+  --inner-shadow: inset 0px 0px 20px 0px rgba(32, 41, 52, 0);
+  --soft-edge: 0px 0px 20px 4px rgba(30, 48, 68, 0);
+
   --color-gradient: linear-gradient(0deg, #ffffff, #ffffff),
     linear-gradient(42deg, #0552eb 0, rgba(5, 82, 235, 0) 100%),
     linear-gradient(198deg, #f200f6 0, rgba(255, 255, 255, 0) 100%),
@@ -23,64 +38,23 @@
     linear-gradient(42deg, #bde9f6 0, rgba(5, 82, 235, 0) 100%),
     linear-gradient(198deg, #febdff 0, rgba(255, 255, 255, 0) 100%),
     linear-gradient(278deg, rgba(0, 253, 238, 1) 0, rgba(255, 255, 255, 0) 100%);
-  --popover: 0px 2px 6px 0px rgba(21, 34, 48, 1);
-  --inner-shadow: inset 0px 0px 20px 0px rgba(32, 41, 52, 0);
-  --soft-edge: 0px 0px 20px 4px rgba(30, 48, 68, 0);
 }
-.grey-s-70 {
-  color: var(--grey-s-70);
+
+/* Dark Mode */
+.dark-mode {
+  --border-color: var(--black-900);
+  --background-color: var(--black-925);
+  --text-color: var(--black-50);
+  --card-bg: var(--black-800);
+  --card-border: var(--black-600);
+  --gradient: var(--color-gradient);
+  --primary-button: var(--black-900);
+  --background-image: url(dark-denim.png);
+  --icon-color: var(--black-800);
+  --lighter-text-color: var(--black-400);
+  --logo-image: url(dark-logo.png);
 }
-.grey-s-50 {
-  color: var(--grey-s-50);
-}
-.grey-s-30 {
-  color: var(--grey-s-30);
-}
-.grey-s-20 {
-  color: var(--grey-s-20);
-}
-.grey-s-10 {
-  color: var(--grey-s-10);
-}
-.grey-100 {
-  color: var(--grey-100);
-}
-.grey-t-15 {
-  color: var(--grey-t-15);
-}
-.grey-t-25 {
-  color: var(--grey-t-25);
-}
-.grey-t-35 {
-  color: var(--grey-t-35);
-}
-.grey-t-50 {
-  color: var(--grey-t-50);
-}
-.grey-t-65 {
-  color: var(--grey-t-65);
-}
-.grey-t-75 {
-  color: var(--grey-t-75);
-}
-.grey-t-85 {
-  color: var(--grey-t-85);
-}
-.grey-t-92 {
-  color: var(--grey-t-92);
-}
-.grey-t-96 {
-  color: var(--grey-t-96);
-}
-.grey-t-98 {
-  color: var(--grey-t-98);
-}
-.color-gradient {
-  color: var(--color-gradient);
-}
-.light-gradient {
-  color: var(--light-gradient);
-}
+
 .popover {
   box-shadow: var(--popover);
 }

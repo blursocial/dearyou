@@ -1,5 +1,5 @@
 .post-component {
-  border-bottom: 2px solid var(--grey-t-85);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 10px;
   margin: 10px 0;
 }
@@ -12,7 +12,7 @@
 }
 
 .post-header > p {
-  color: var(--grey-t-35);
+  color: var(--lighter-text-color);
 }
 
 .post-text {
@@ -28,10 +28,10 @@
 }
 
 .btn-edit {
-  color: var(--grey-100);
+  color: var(--text-color);
   text-decoration: none;
   padding: 5px 10px;
-  border: 1px solid var(--grey-100);
+  border: 1px solid var(--border-color);
   border-radius: 3px;
   background-color: #fff;
   font-size: 12px;
@@ -39,7 +39,7 @@
 }
 
 .btn-edit:hover {
-  background-color: var(--grey-100);
+  background-color: var(--background-color);
   color: #fff;
 }
 
